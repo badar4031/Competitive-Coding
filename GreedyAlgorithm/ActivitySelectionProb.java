@@ -32,18 +32,7 @@ class Activity
     this.finish = finish;
   }
 }
-class Compare{
-    // A utility function that is used for sorting
-  // activities according to finish time
-  static void compare(Activity arr[],int n){
-      Arrays.sort(arr,new Comparator<Activity>(){
-          @Override
-            public int compare(Activity s1, Activity s2){
-                return s1.finish - s2.finish;
-            }
-      });
-  }
-}
+
 
 class HelloWorld {
      // Returns count of the maximum set of activities that
