@@ -52,8 +52,12 @@ class HelloWorld {
   static void printMaxActivities(Activity arr[], int n)
   {
     // Sort jobs according to finish time
-    Compare obj = new Compare();
-    obj.compare(arr, n);
+     Arrays.sort(arr,new Comparator<Activity>(){
+          @Override
+            public int compare(Activity s1, Activity s2){
+                return s1.finish - s2.finish;
+            }
+      });
     System.out.println(
       "Following activities are selected :");
  
