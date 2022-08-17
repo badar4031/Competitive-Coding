@@ -1,0 +1,10 @@
+Greedy Approach
+--------------------
+
+->Try to find optimal solution by taking best available choice at every step.
+->Greedy Soln should be opted for:-
+      -> Activity Selection Problem
+      -> Job Sequencing Problem
+      -> Huffman Coding
+      -> Water Connection Prob
+      -> Knapsack Problem
