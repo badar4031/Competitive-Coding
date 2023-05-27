@@ -9,6 +9,20 @@ public class KadanesAlgorithm
     public static int maxSubarraySum(int arr[]){
         int maxSum = Integer.MIN_VALUE;
         int currSum = 0;
+        boolean allNegative = true;
+        
+        //for all negative Number
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>0)
+                allNegative = false;
+            if( maxSum < arr[i])
+                maxSum = arr[i];
+        }
+        if(allNegative)
+            return maxSum;
+        else 
+            maxSum = Integer.MIN_VALUE;
+        
         for(int i =0;i<arr.length;i++){
             currSum += arr[i];
             if(currSum < 0)
@@ -19,7 +33,7 @@ public class KadanesAlgorithm
         return maxSum;
     }
     public static void main(String[] args) {
-		int arr[] = {1,-2,6,-1,3};
+		int arr[] = {-10,-2,-6,-1,-3};
 		System.out.println("Max SubArray Sum = "+maxSubarraySum(arr));
 	}
 }
