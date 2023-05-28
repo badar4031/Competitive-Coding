@@ -7,15 +7,20 @@ public class MaxProfit
         bp = arr[0];
         sp = Integer.MIN_VALUE;
         for(int i=1;i<n;i++){
-            sp = Math.max(sp,arr[i]);
-            p = sp-bp;
-            bp = Math.min(bp,arr[i-1]);
-            maxProfit = Math.max(maxProfit,p);
+            sp = arr[i];
+            if(bp<sp){
+                p = sp-bp;
+                maxProfit = Math.max(maxProfit,p);
+            }
+            else{
+                bp = arr[i];
+            }
+           
         }
         return maxProfit;
     }
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		int arr[] = {7,1,5,3,6,4};
 		System.out.println("Maximum profit = "+calcMaxProfit(arr));
-	}
+     }
 }
